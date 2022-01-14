@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637703418929394583
-    m_Hash: 2488079529
+      ticks: 637773339750840754
+    m_Hash: 3844730601
   m_LockFileStatus:
     m_FilePath: C:/Users/Dominic/Programming/Unity Projects/PatioHeaterHDRP/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637706219388338497
-    m_Hash: 3473166388
+      ticks: 637776222918388715
+    m_Hash: 4265551668
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
@@ -80,6 +80,7 @@ m_PackageAssets:
         - 2.6.5
         - 2.6.9
         - 2.6.10
+        - 2.6.11
         - 2.7.1
         - 2.7.2
         - 2.7.3
@@ -92,6 +93,10 @@ m_PackageAssets:
         - 2.8.0-pre.1
         - 2.8.0
         - 2.8.1
+        - 2.8.2
+        - 2.8.3
+        - 2.8.4
+        - 2.9.0-pre.1
         compatible:
         - 2.5.0
         - 2.6.0-preview.2
@@ -109,6 +114,7 @@ m_PackageAssets:
         - 2.6.5
         - 2.6.9
         - 2.6.10
+        - 2.6.11
         - 2.7.1
         - 2.7.2
         - 2.7.3
@@ -121,7 +127,11 @@ m_PackageAssets:
         - 2.8.0-pre.1
         - 2.8.0
         - 2.8.1
-        verified: 2.6.10
+        - 2.8.2
+        - 2.8.3
+        - 2.8.4
+        - 2.9.0-pre.1
+        verified: 2.6.11
       dependencies: []
       resolvedDependencies: []
       keywords:
@@ -217,7 +227,11 @@ m_PackageAssets:
         - 1.12.5
         - 1.13.5
         - 1.14.1
+        - 1.14.4
+        - 1.14.7
         - 1.15.1
+        - 1.15.4
+        - 1.15.7
         - 2.0.0-preview.6
         - 2.0.0-preview.8
         - 2.0.0-preview.15
@@ -237,6 +251,8 @@ m_PackageAssets:
         - 1.10.2
         - 1.12.5
         - 1.14.1
+        - 1.14.4
+        - 1.14.7
         - 2.0.0-preview.6
         - 2.0.0-preview.8
         - 2.0.0-preview.15
@@ -328,6 +344,7 @@ m_PackageAssets:
         - 3.0.5
         - 3.0.6
         - 3.0.7
+        - 3.0.9
         compatible:
         - 1.0.2
         - 1.0.6
@@ -354,6 +371,7 @@ m_PackageAssets:
         - 3.0.5
         - 3.0.6
         - 3.0.7
+        - 3.0.9
         verified: 2.0.7
       dependencies:
       - name: com.unity.test-framework
@@ -425,6 +443,7 @@ m_PackageAssets:
         - 2.0.8
         - 2.0.9
         - 2.0.11
+        - 2.0.12
         compatible:
         - 1.0.2
         - 1.0.3
@@ -441,7 +460,8 @@ m_PackageAssets:
         - 2.0.8
         - 2.0.9
         - 2.0.11
-        verified: 2.0.11
+        - 2.0.12
+        verified: 2.0.12
       dependencies: []
       resolvedDependencies: []
       keywords: []
@@ -653,6 +673,8 @@ m_PackageAssets:
         - 10.5.1
         - 10.6.0
         - 10.7.0
+        - 10.8.0
+        - 10.8.1
         compatible:
         - 10.2.2
         verified: 10.2.2
@@ -881,12 +903,12 @@ m_PackageAssets:
         url: git+https://github.com/Unity-Technologies/com.unity.test-framework.git
         revision: 83583c7273ee961612200215e8989039bbce8748
         path: 
-    - packageId: com.unity.textmeshpro@3.0.1
+    - packageId: com.unity.textmeshpro@3.0.6
       testable: 0
       isDirectDependency: 1
-      version: 3.0.1
+      version: 3.0.6
       source: 1
-      resolvedPath: C:\Users\Dominic\Programming\Unity Projects\PatioHeaterHDRP\Library\PackageCache\com.unity.textmeshpro@3.0.1
+      resolvedPath: C:\Users\Dominic\Programming\Unity Projects\PatioHeaterHDRP\Library\PackageCache\com.unity.textmeshpro@3.0.6
       assetPath: Packages/com.unity.textmeshpro
       name: com.unity.textmeshpro
       displayName: TextMeshPro
@@ -982,6 +1004,7 @@ m_PackageAssets:
         - 2.1.5
         - 2.1.6
         - 2.2.0-preview.1
+        - 2.2.0-preview.2
         - 3.0.0-preview.1
         - 3.0.0-preview.3
         - 3.0.0-preview.4
@@ -1000,6 +1023,8 @@ m_PackageAssets:
         - 3.0.5
         - 3.0.6
         - 3.2.0-pre.1
+        - 3.2.0-pre.2
+        - 4.0.0-pre.1
         compatible:
         - 3.0.1
         - 3.0.3
@@ -1035,13 +1060,13 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637314376320000000
+      datePublishedTicks: 637547111200000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
         url: https://github.cds.internal.unity3d.com/unity/com.unity.textmeshpro.git
-        revision: 1604b62e543216408311bcd1355a7a9ca1e65765
+        revision: 01e57e3b7de18af9dfe9baaa0a0ff5cc4765c899
         path: 
     - packageId: com.unity.timeline@1.4.4
       testable: 0
@@ -1131,6 +1156,7 @@ m_PackageAssets:
         - 1.6.1
         - 1.6.2
         - 1.6.3
+        - 1.7.0-pre.1
         compatible:
         - 1.2.6
         - 1.2.7
@@ -1193,6 +1219,7 @@ m_PackageAssets:
         - 1.6.1
         - 1.6.2
         - 1.6.3
+        - 1.7.0-pre.1
         verified: 1.4.8
       dependencies:
       - name: com.unity.modules.director
@@ -3223,6 +3250,8 @@ m_PackageAssets:
         - 10.5.1
         - 10.6.0
         - 10.7.0
+        - 10.8.0
+        - 10.8.1
         compatible:
         - 10.2.2
         verified: 10.2.2
@@ -3373,6 +3402,8 @@ m_PackageAssets:
         - 10.5.1
         - 10.6.0
         - 10.7.0
+        - 10.8.0
+        - 10.8.1
         compatible:
         - 10.2.2
         verified: 10.2.2
@@ -3499,6 +3530,8 @@ m_PackageAssets:
         - 10.5.1
         - 10.6.0
         - 10.7.0
+        - 10.8.0
+        - 10.8.1
         compatible:
         - 10.2.2
         verified: 10.2.2
@@ -3604,6 +3637,8 @@ m_PackageAssets:
         - 10.5.1
         - 10.6.0
         - 10.7.0
+        - 10.8.0
+        - 10.8.1
         compatible:
         - 10.2.2
         verified: 10.2.2
