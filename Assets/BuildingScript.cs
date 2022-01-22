@@ -9,6 +9,7 @@ public class BuildingScript : MonoBehaviour
     CityBuilder cb;
     Camera cam;
     public int colour;
+    //public static int age;
     public bool display = false;
     bool generated = false;
 
@@ -18,16 +19,20 @@ public class BuildingScript : MonoBehaviour
     static string test = "{\"origin\":[\"hello world!\"]}";
     static string grammarString = @"
     {
-    ""origin"":[""#namePrefix.capitalize# #name# #situation#""],
-    ""name"": [""Dave"", ""Dom"", ""Dan""],
-    ""situation"":[""was feeling #emotion#."", ""desperately needs to #activity#."", ""has just #activity.ed# and is now #emotion#.""],
-    ""cold"":[""chilly"", ""frozen"", ""nippy"", ""frosty"", ""cold""],
-    ""emotion"":[""#cold#"", ""tired"", ""sleepy"", ""energetic"", ""hungry""],
-    ""activity"":[""cook"", ""exercise"", ""wash"", ""garden"", ""rest"", ""consume""],
-    ""namePrefix"":[""elder"", ""brother"", ""sister"", ""youngling"", ""dunce""],
-    ""origin"":[""#namePrefix.capitalize# #name# #situation#
-    <p></p>
-    they live with #name#, who is feeling #emotion#.""]
+    ""name"": [""Dave"", ""Dom"", ""Dan"", ""Apaay"", ""Sedna"", ""Takaani"", ""Rachel"", ""Akna"", ""Ahnah"", ""Alasie"", ""Muktuk"", ""Anjij"", ""Sulak"", ""Sakari"", ""Tutegh"", ""Panu"", ""Pilip"", ""Siku"", ""Rama"", ""Hanta"", ""Anik"", ""Yotimo"", ""Cupun"", ""Imij""],
+    ""job"": [""miner"", ""smith"", ""carpenter"", ""council Member"", ""cook"", ""child"", ""hunter"", ""gatherer"", ""snow shoveler""],
+    ""quality"": [""incompetent"", ""competent"", ""capable"", ""tired"", ""masterful"", ""begrudging"", ""resourceful"", ""aspiring"", ""apprentice""],
+    ""situation"": [""feeling #emotion#."", ""desperately needs to #activity#."", ""just finished #activity.ing# and is now #emotion#.""],
+    ""cold"": [""chilly"", ""frozen"", ""nippy"", ""frosty"", ""cold""],
+    ""emotion"": [""#cold#"", ""tired"", ""sleepy"", ""energetic"", ""hungry""],
+    ""problem"": [""a bad back"", ""frostbite"", ""pneumonia"", ""feeling a bit #emotion#""],
+    ""activity"": [""cook"", ""exercise"", ""wash"", ""garden"", ""rest"", ""consume""],
+    ""age"": [""6"", ""7"", ""8"", ""9"", ""10"", ""11"", ""12"", ""15"", ""17"", ""18"", ""19"", ""20"", ""24"", ""32"", ""45"", ""54"", ""67"", ""78"", ""82"", ""99""],
+    ""namePrefix"": [""elder"", ""brother"", ""sister"", ""youngling"", ""dunce""],
+    ""origin"": [""Name: #namePrefix.capitalize# #name#
+Age: #age#
+Job: #quality.capitalize# #job#
+Currently: #situation.capitalize#""]
     }";
     TraceryGrammar grammar = new TraceryGrammar(grammarString);
 
@@ -35,6 +40,9 @@ public class BuildingScript : MonoBehaviour
     {
         cb = GameObject.FindGameObjectWithTag("GameController").GetComponent<CityBuilder>();
         cam = cb.cam;
+        //age = Random.Range(6, 99);
+        
+        
     }
 
     void OnMouseOver()

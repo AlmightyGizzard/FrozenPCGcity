@@ -16,6 +16,7 @@ public class CityBuilder : MonoBehaviour
     public MeshRenderer[] meshRenderers;
     public GameObject buildingPrefab;
     public GameObject generatorPrefab;
+    public GameObject lampPrefab;
     public List<GameObject> generators;
     public List<GameObject> rings;
     
@@ -28,10 +29,13 @@ public class CityBuilder : MonoBehaviour
     public int maxGenerators = 1;
     public int generatorOffset = 8;
     public int ringsPerGenerator;
+    public int lampDensity;
     [SerializeField]
     private int numGenerators = 0;
     [SerializeField]
     private Vector3 generatorPosition = new Vector3(0, 0, 0);
+
+    private CaveGeneration terrain;
 
     public GameObject uiPanel;
     public TextMeshProUGUI text;
@@ -91,6 +95,7 @@ public class CityBuilder : MonoBehaviour
 
     void placeGenerator(int numRings = 1)
     {
+        int ld = lampDensity;
         GameObject newGen;
         if (numGenerators == 0)
         {
@@ -106,11 +111,12 @@ public class CityBuilder : MonoBehaviour
 
         for(int i = 1; i <= numRings; i++)
         {
-            placeRing(newGen, i*ringDensity);
+            placeRing(newGen, i*ringDensity, ld);
+            ld = ld / 2;
         }
     }
 
-    void placeRing(GameObject generator, float radius)
+    void placeRing(GameObject generator, float radius, int lampDensity)
     {
         // Create a ring object under the generator,
         // then draw a circle w lineRenderer
@@ -125,12 +131,15 @@ public class CityBuilder : MonoBehaviour
         // in the editor + make density increase, not decrease
         db.density = buildingDensity;
         db.buildingPrefab = buildingPrefab;
+        db.lampPrefab = lampPrefab;
+        db.lampDistribution = lampDensity;
         db.generatorPositions = generators;
         rings.Add(ring);
     }
 
     public void BuildCity()
     {
+        terrain.generate();
         int numRings = ringsPerGenerator;
         // Place a single generator, then flip a coin - on heads,
         // generate another generator - so long as we haven't
@@ -164,6 +173,7 @@ public class CityBuilder : MonoBehaviour
         cam = FindObjectOfType<Camera>();
         meshFilters = new MeshFilter[noOfModels];
         meshRenderers = new MeshRenderer[noOfModels];
+        terrain = FindObjectOfType<CaveGeneration>();
         for (int index = 0; index < buildingModels.Count; index++)
         {
             //Debug.Log(buildingModels[index].GetComponent<MeshFilter>());

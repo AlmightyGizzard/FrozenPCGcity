@@ -6,7 +6,11 @@ public class DistrictBuilder : MonoBehaviour
 {
     public List<GameObject> generatorPositions;
     public GameObject buildingPrefab;
+    public GameObject lampPrefab;
     public int density;
+    [SerializeField]
+    private int lampIndex;
+    public int lampDistribution;
     public LineRenderer line;
     protected CityBuilder cb;
 
@@ -33,6 +37,7 @@ public class DistrictBuilder : MonoBehaviour
     // Start is called before the first frame update   
     void Start()
     {
+        lampIndex = 0;
         cb = GameObject.FindGameObjectWithTag("GameController").GetComponent<CityBuilder>();
         line = GetComponent<LineRenderer>();
         // Run through every X points in the circle,
@@ -72,6 +77,17 @@ public class DistrictBuilder : MonoBehaviour
                 // Ensure the building is rotated to be facing the generator
                 Quaternion targetRot = Quaternion.LookRotation(this.transform.position - building.transform.position);
                 building.transform.rotation = targetRot;
+
+                lampIndex++;
+                if (lampIndex == lampDistribution)
+                {
+                    GameObject lampPost = Instantiate(lampPrefab, building.transform, true);
+                    lampPost.transform.position = building.transform.position;
+                    lampPost.transform.rotation = targetRot;
+                    lampPost.transform.Translate(new Vector3(-2, 0, 3));
+                    lampIndex = 0;
+                }
+                
             }
 
         }
