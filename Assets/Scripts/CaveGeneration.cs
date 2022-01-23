@@ -30,6 +30,7 @@ public class CaveGeneration : MonoBehaviour
 
     TerrainData terrainData;
 
+    // Take a float[] and a set of coordinates, then modify a circle of those coordinates
     private float[,] getCircle(float[,] data, int xCentre, int yCentre, int radius)
     {
         int xSym;
@@ -62,8 +63,7 @@ public class CaveGeneration : MonoBehaviour
         * 0xffffff), QualityMode.High);
         //The thresholded output -- choose either 0.0 or 1.0, based
         //on the output
-        var clamped = new LibNoise.Operator.Select(new Const(0.0f), new Const(1.0f),
-        generator);
+        var clamped = new LibNoise.Operator.Select(new Const(0.0f), new Const(1.0f),generator);
         //Set the threshold and falloff rate
         clamped.SetBounds(0f, threshold);
         clamped.FallOff = falloff;
@@ -75,10 +75,13 @@ public class CaveGeneration : MonoBehaviour
         //var data = noise.GetData(true, 0, 0, true);
         var data = noise.GetNormalizedData();
 
+
+
         // Modify and flatten a circle of area in the centre
         data = getCircle(data, 256, 256, radius);
         //.. and actually set the heights
         terrainData.SetHeights(0, 0, data);
+        
         
     }
 

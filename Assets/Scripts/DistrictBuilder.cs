@@ -8,6 +8,7 @@ public class DistrictBuilder : MonoBehaviour
     public GameObject buildingPrefab;
     public GameObject lampPrefab;
     public int density;
+    public int noOfModels;
     [SerializeField]
     private int lampIndex;
     public int lampDistribution;
@@ -18,7 +19,7 @@ public class DistrictBuilder : MonoBehaviour
     public void createBuilding(GameObject prefab)
     {
         // Grab a random value for now, chuck in proc gen later
-        int colour = Random.Range(0, 3);
+        int colour = Random.Range(0, noOfModels);
         
         // Chuck in the meshfilter
         MeshFilter mesh = prefab.AddComponent<MeshFilter>();

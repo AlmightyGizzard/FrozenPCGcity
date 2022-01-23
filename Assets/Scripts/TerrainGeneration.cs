@@ -18,6 +18,7 @@ public class TerrainGeneration : MonoBehaviour
 
     public void generate()
     {
+        TerrainData terrainData = Terrain.activeTerrain.terrainData;
         Debug.Log("Generating...");
     }
     // Start is called before the first frame update

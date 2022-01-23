@@ -59,6 +59,7 @@
     <Compile Include="Assets\Editor\CaveGenEditor.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Editor\ReadmeEditor.cs" />
     <Compile Include="Assets\Packages\Tracery\JSON\Editor\JSONChecker.cs" />
+    <Compile Include="Assets\Editor\IUPEditor.cs" />
     <Compile Include="Assets\Editor\TerrainGenEditor.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CityBuilder : MonoBehaviour
 {
-    public int noOfModels = 2;
+    public int noOfModels = 20;
     public GameObject ringPrefab;
     // Just a cube for now, but will ad in scripts to
     // procedurally choose from an array of asset,=s.
@@ -36,6 +36,7 @@ public class CityBuilder : MonoBehaviour
     private Vector3 generatorPosition = new Vector3(0, 0, 0);
 
     private CaveGeneration terrain;
+    public IterativeUniformPoint iup;
 
     public GameObject uiPanel;
     public TextMeshProUGUI text;
@@ -114,6 +115,8 @@ public class CityBuilder : MonoBehaviour
             placeRing(newGen, i*ringDensity, ld);
             ld = ld / 2;
         }
+        iup.bannedPositions.Add(newGen.transform.position);
+        iup.bannedRadiuses.Add(numRings * ringDensity);
     }
 
     void placeRing(GameObject generator, float radius, int lampDensity)
@@ -133,6 +136,7 @@ public class CityBuilder : MonoBehaviour
         db.buildingPrefab = buildingPrefab;
         db.lampPrefab = lampPrefab;
         db.lampDistribution = lampDensity;
+        db.noOfModels = noOfModels;
         db.generatorPositions = generators;
         rings.Add(ring);
     }
@@ -150,6 +154,7 @@ public class CityBuilder : MonoBehaviour
             if (numRings > 1) { numRings--; }
             placeGenerator(numRings);
         }
+        iup.generate();
     }
 
     public void WipeCity()
@@ -164,13 +169,14 @@ public class CityBuilder : MonoBehaviour
         {
             Destroy(r);
         }
-        generators.Clear(); rings.Clear();
+        generators.Clear(); rings.Clear(); iup.wipe();
     }
 
     private void Awake()
     {
         text = GameObject.Find("Text").GetComponentInChildren<TextMeshProUGUI>();
         cam = FindObjectOfType<Camera>();
+        iup = FindObjectOfType<IterativeUniformPoint>();
         meshFilters = new MeshFilter[noOfModels];
         meshRenderers = new MeshRenderer[noOfModels];
         terrain = FindObjectOfType<CaveGeneration>();

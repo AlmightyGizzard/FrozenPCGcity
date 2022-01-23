@@ -62,15 +62,15 @@
     <Compile Include="Assets\Packages\LibNoise.Unity\Operator\Scale.cs" />
     <Compile Include="Assets\Packages\LibNoise.Unity\ModuleBase.cs" />
     <Compile Include="Assets\Packages\LibNoise.Unity\Operator\Multiply.cs" />
-    <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Packages\LibNoise.Unity\Generator\Perlin.cs" />
     <Compile Include="Assets\Packages\LibNoise.Unity\Operator\Invert.cs" />
     <Compile Include="Assets\Packages\LibNoise.Unity\Operator\Displace.cs" />
     <Compile Include="Assets\Packages\LibNoise.Unity\Properties\AssemblyInfo.cs" />
+    <Compile Include="Assets\Scripts\IterativeUniformPoint.cs" />
+    <Compile Include="Assets\Scripts\TerrainGeneration.cs" />
     <Compile Include="Assets\Packages\Tracery\JSON\JSONObject.cs" />
     <Compile Include="Assets\BuildingScript.cs" />
     <Compile Include="Assets\Packages\Tracery\JSON\JSONTemplates.cs" />
-    <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
     <Compile Include="Assets\Packages\LibNoise.Unity\Generator\Billow.cs" />
     <Compile Include="Assets\Packages\Tracery\JSON\VectorTemplates.cs" />
     <Compile Include="Assets\Packages\LibNoise.Unity\GradientPresets.cs" />
@@ -87,7 +87,6 @@
     <Compile Include="Assets\Packages\Tracery\Demo\Scripts\DemoPanel.cs" />
     <Compile Include="Assets\Scripts\CityBuilder.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
-    <Compile Include="Assets\Scripts\LookWithMouse.cs" />
     <Compile Include="Assets\Packages\LibNoise.Unity\Operator\Cache.cs" />
     <Compile Include="Assets\Packages\LibNoise.Unity\Operator\Rotate.cs" />
     <Compile Include="Assets\Packages\LibNoise.Unity\Operator\Subtract.cs" />
@@ -108,7 +107,7 @@
     <Compile Include="Assets\Packages\LibNoise.Unity\Operator\Add.cs" />
     <Compile Include="Assets\Packages\LibNoise.Unity\Operator\Blend.cs" />
     <Compile Include="Assets\Packages\Tracery\Scripts\JSONObjectExtensions.cs" />
-    <Compile Include="Assets\Scripts\TerrainGeneration.cs" />
+    <Compile Include="Assets\Scripts\CameraScript.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Packages\Samples\Terrain Tools\0.1.0-preview\Terrain Assets\ThirdPartyNotices.txt" />
